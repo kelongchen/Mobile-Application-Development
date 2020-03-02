@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/all"
+        android:title="all" />
+    <item
+        android:id="@+id/science"
+        android:icon="@android:color/holo_blue_bright"
+        android:title="science" />
+    <item
+        android:id="@+id/gaming"
+        android:title="gaming" />
+    <item
+        android:id="@+id/general"
+        android:title="general" />
+    <item
+        android:id="@+id/technology"
+        android:title="technology" />
+    <item
+        android:id="@+id/sport"
+        android:title="sport" />
+    <item
+        android:id="@+id/entertainment"
+        android:title="entertainment" />
+    <item
+        android:id="@+id/business"
+        android:title="business" />
+</menu>
