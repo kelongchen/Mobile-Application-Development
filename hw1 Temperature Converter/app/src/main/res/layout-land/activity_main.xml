@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/HistoryLable"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:text="Conversion History:"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/ConversionLable"
+        app:layout_constraintHorizontal_bias="0.388"
+        app:layout_constraintStart_toStartOf="@+id/ConversionLable"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/Text"
+        android:layout_width="130dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/grey"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="numberSigned|numberDecimal"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/CDegreesText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/CDegreesText"
+        app:layout_constraintVertical_bias="0.578" />
+
+    <TextView
+        android:id="@+id/CDegreesText"
+        android:layout_width="230dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:text="Celsius Degrees:"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/Text"
+        app:layout_constraintTop_toBottomOf="@+id/ConvertButton" />
+
+    <TextView
+        android:id="@+id/ConversionLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Conversion:"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="199dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="65dp"
+        android:checkedButton="@id/FCButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/FCButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="clickRadio"
+            android:text="Fahrenheit to Celsius"
+            android:textAlignment="viewStart" />
+
+        <RadioButton
+            android:id="@+id/CFButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="clickRadio"
+            android:text="Celsius to Fahrenheit "
+            android:textAlignment="viewStart" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/FDegreesText"
+        android:layout_width="230dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:text="Fahrenheit Degrees:"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/Edit"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Edit"
+        android:layout_width="130dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/grey"
+        android:ems="10"
+        android:hint="type in numbers"
+        android:inputType="numberSigned|numberDecimal"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/FDegreesText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/FDegreesText"
+        app:layout_constraintVertical_bias="0.526" />
+
+    <Button
+        android:id="@+id/ConvertButton"
+        android:layout_width="374dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:onClick="convert"
+        android:text="Convert"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.927"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FDegreesText" />
+
+    <Button
+        android:id="@+id/ClearButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="clearhistory"
+        android:text="clear"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/HistoryText"
+        app:layout_constraintStart_toStartOf="@+id/HistoryText"
+        app:layout_constraintTop_toBottomOf="@+id/HistoryText" />
+
+    <TextView
+        android:id="@+id/HistoryText"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/grey"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:textAlignment="viewStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HistoryLable" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
